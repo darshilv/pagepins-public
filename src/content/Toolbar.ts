@@ -1,4 +1,5 @@
 import type { Annotation, PinpointMode } from '../types';
+import { h, render } from 'preact';
 import { annotationToMarkdown, annotationsToMarkdown } from '../utils/markdown';
 import { getAnnotations, saveAnnotations } from '../utils/storage';
 import { EVENTS, PPT_PREFIX } from './constants';
@@ -6,9 +7,9 @@ import {
   type HistoryGroup,
   type ReviewTab,
   type ToolbarTheme,
+  ToolbarView,
   getToolbarClassName,
-  renderToolbar,
-} from './toolbarView';
+} from './ToolbarView';
 
 const THEME_STORAGE_KEY = 'pinpoint:theme';
 
@@ -49,6 +50,7 @@ export class Toolbar {
     if (this.#copyAllFeedbackTimeout !== null) window.clearTimeout(this.#copyAllFeedbackTimeout);
     if (this.#copyOneFeedbackTimeout !== null) window.clearTimeout(this.#copyOneFeedbackTimeout);
     document.documentElement.removeAttribute('data-pinpoint-theme');
+    if (this.#el) render(null, this.#el);
     this.#el?.remove();
     this.#el = null;
   }
@@ -232,17 +234,6 @@ export class Toolbar {
     this.#requestMode(this.#mode === 'inactive' ? 'active-select' : 'inactive');
   }
 
-  #anchorButtonLabel(): string {
-    if (this.#mode === 'inactive') return 'Activate Pinpoint';
-    return 'Deactivate Pinpoint';
-  }
-
-  #anchorButtonState(): 'inactive' | 'active' | 'review' {
-    if (this.#mode === 'inactive') return 'inactive';
-    if (this.#mode === 'active-review') return 'review';
-    return 'active';
-  }
-
   #formatHistoryTimestamp(timestamp: number): string {
     const value = new Date(timestamp);
     const now = new Date();
@@ -311,7 +302,13 @@ export class Toolbar {
     };
 
     this.#el.className = getToolbarClassName(viewState);
-    this.#el.innerHTML = renderToolbar(viewState, (timestamp) => this.#formatHistoryTimestamp(timestamp));
+    render(
+      h(ToolbarView, {
+        state: viewState,
+        formatHistoryTimestamp: (timestamp: number) => this.#formatHistoryTimestamp(timestamp),
+      }),
+      this.#el
+    );
   }
 
   async #handleClick(event: Event): Promise<void> {
