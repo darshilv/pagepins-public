@@ -1,6 +1,6 @@
-# Pinpoint Extension Public Site
+# PagePins Extension Public Site
 
-This repository hosts the public-facing website and documentation for Pinpoint Extension.
+This repository hosts the public-facing website and documentation for PagePins Extension.
 
 It is intended for marketing and policy content only.
 
