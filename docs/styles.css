@@ -341,6 +341,39 @@ img {
   color: var(--text-primary);
 }
 
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: var(--surface-inverse);
+  color: var(--text-inverse) !important;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+}
+
+.nav-cta:hover {
+  background: var(--accent-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(6, 78, 59, 0.3);
+}
+
+.chrome-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.external-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+}
+
+.cws-link {
+  gap: 10px;
+}
+
 @media (max-width: 640px) {
   .nav-links { display: none; }
 }
