@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Pinpoint lets you annotate live webpages, capture precise UI feedback, and turn review notes into implementation-ready prompts."
+    />
+    <title>Pinpoint | Annotate Live UI and Turn Feedback Into Prompts</title>
+    <link rel="icon" type="image/png" href="./assets/pinpoint-extension-icon.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/pinpoint-extension-icon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="nav-wrapper">
+      <nav class="navbar" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Pinpoint home">
+          <div class="brand-logo" aria-hidden="true">
+            <img src="./assets/pinpoint-extension-icon.png" alt="" />
+          </div>
+          <span>Pinpoint</span>
+        </a>
+        <div class="nav-links">
+          <a href="#top">Home</a>
+          <a href="#why-pinpoint">Why Pinpoint</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="./privacy.html">Privacy</a>
+        </div>
+      </nav>
+    </div>
+
+    <main id="top">
+      <!-- Hero Section -->
+      <section class="section hero">
+        <div class="container grid-2">
+          <div class="hero-content">
+            <h1>UI annotation for agentic workflows.</h1>
+            <p>
+              Pinpoint helps you click the exact element on a live webpage, attach the change you want, and copy the open feedback into an implementation-ready prompt for engineers or AI.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#how-it-works">See workflow</a>
+              <a class="btn btn-secondary" href="https://chromewebstore.google.com/">Install Extension</a>
+            </div>
+          </div>
+
+          <!-- Browser Mockup Feature -->
+          <div class="mockup-wrapper" aria-label="Pinpoint workflow preview">
+            <div class="mockup-bg-blob"></div>
+            <div class="browser-window">
+              <div class="browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="dot-red"></span>
+                  <span class="dot-yel"></span>
+                  <span class="dot-grn"></span>
+                </div>
+                <div class="browser-url">example-product.com/pricing</div>
+              </div>
+
+              <div class="browser-body">
+                <div class="browser-content-area">
+                  <div class="mock-website">
+                    <h2>Upgrade without friction</h2>
+                    <p>Clear pricing, clear permissions, and a simple path.</p>
+                    <div class="mock-grid">
+                      <div class="mock-block">
+                        <strong>Starter</strong>
+                        <div style="font-size: 1.25rem; font-weight: 700; margin: 6px 0;">$15/mo</div>
+                        <div style="margin-top: 12px; padding: 6px; background: var(--text-primary); color: white; text-align: center; border-radius: 4px;">Continue</div>
+                      </div>
+                      <div class="mock-block">
+                        <strong>Growth</strong>
+                        <div style="font-size: 1.25rem; font-weight: 700; margin: 6px 0;">$49/mo</div>
+                        <div style="margin-top: 12px; padding: 6px; background: var(--text-primary); color: white; text-align: center; border-radius: 4px;">Continue</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Wireframe Toolbar mimicking real extension -->
+                <div class="mock-anchor-shell">
+                  <button class="mock-anchor-copy">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px;opacity:0.7;">
+                      <rect x="5.2" y="3.2" width="7.3" height="9.3" rx="1.6" />
+                      <path d="M9.8 3.2V2.5a1 1 0 0 0-1-1H3.5a1 1 0 0 0-1 1v7.3a1 1 0 0 0 1 1h.7" />
+                    </svg>
+                    <span>2</span>
+                  </button>
+                  <div class="mock-anchor-actions">
+                    <button>
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 16px; height: 16px;"><path d="M5 5.5h10M5 10h10M5 14.5h6" /></svg>
+                    </button>
+                    <button>
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 16px; height: 16px;"><path d="M7.5 7.2a2.6 2.6 0 0 1 5 1c0 1.8-2.5 2.2-2.5 4" /><path d="M10 14.9h.01" /></svg>
+                    </button>
+                    <button>
+                      <svg viewBox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;"><path d="M15.5 4.5a7.5 7.5 0 1 0 4 13.85A8.5 8.5 0 1 1 15.5 4.5z" /></svg>
+                    </button>
+                  </div>
+                  <button class="mock-anchor-button" data-state="active">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" style="width: 24px; height: 24px;">
+                      <path d="M12 6v12" /><path d="M6 12h12" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Interactive overlay annotations physically anchored to markers -->
+                <div class="pin-wrapper pin-1-wrap">
+                  <div class="annotation-pin">1</div>
+                  <div class="annotation-popup popup-up">
+                    This CTA just says "Continue". We need it to explicitly explain the next step.
+                  </div>
+                </div>
+
+                <div class="pin-wrapper pin-2-wrap">
+                  <div class="annotation-pin">2</div>
+                  <div class="annotation-popup popup-up">
+                    The price here needs to stand out way more. Hierarchy feels flat.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Pinpoint -->
+      <section class="section section-sm" id="why-pinpoint">
+        <div class="container">
+          <div style="max-width: 600px; margin-bottom: 64px;">
+            <h2>Built for fast review loops, not vague feedback.</h2>
+            <p>
+              Pinpoint is for moments when "the hero feels off" is not enough. It gives you a quicker way to collect precise page feedback and turn it into real work.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3>Point at the real UI</h3>
+              <p>Review the live page itself, click the element you want to discuss, and attach feedback where it fundamentally belongs.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                  <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+              </div>
+              <h3>Keep friction low</h3>
+              <p>Notes stay concise and anchored, which makes them easier for an engineer, designer, or AI agent to parse quickly.</p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3>Turn review to action</h3>
+              <p>Copy all open notes directly into a clean prompt so the next step is implementation, not organizing feedback tickets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banner / Quote -->
+      <section class="section section-sm">
+        <div class="container">
+          <div class="quote-box glass-panel">
+            <p>
+              Instead of collecting scattered comments, screenshots, and follow-up messages, <br/><strong>Pinpoint turns one review pass into a clear build request.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it Works -->
+      <section class="section" id="how-it-works">
+        <div class="container grid-2">
+          <div>
+            <h2>How the workflow runs</h2>
+            <p style="max-width: 480px;">
+              Pinpoint stays intentionally narrow. It is a focused tool for design QA, bug review, implementation handoff, and prompt generation on live builds.
+            </p>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="glass-panel" style="padding: 32px;">
+              <h3 style="margin-bottom: 8px;">1. Activate review mode</h3>
+              <p>Open Pinpoint from the toolbar or shortcut when you are on the page you want to review and analyze.</p>
+            </div>
+            <div class="glass-panel" style="padding: 32px;">
+              <h3 style="margin-bottom: 8px;">2. Click and annotate</h3>
+              <p>Select the exact UI element and leave a tight note about the intended change, underlying bug, or design refinement.</p>
+            </div>
+            <div class="glass-panel" style="padding: 32px;">
+              <h3 style="margin-bottom: 8px;">3. Export prompt</h3>
+              <p>Copy the unified feedback straight to your clipboard, perfectly formatted as a prompt that is ready to hand off or feed to AI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-logo" style="width: 24px; height: 24px;">
+              <img src="./assets/pinpoint-extension-icon.png" alt="" />
+            </div>
+            Pinpoint
+          </div>
+          <p>Pinpoint keeps webpage feedback specific, localized, and instantly actionable. A lightweight extension with a massive impact.</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="mailto:ztnbqfspcs@privaterelay.appleid.com">Support Request</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

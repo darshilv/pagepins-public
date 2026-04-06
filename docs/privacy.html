@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy | Pinpoint</title>
+    <link rel="icon" type="image/png" href="./assets/pinpoint-extension-icon.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/pinpoint-extension-icon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Navigation (reused from index.html for consistency) -->
+    <div class="nav-wrapper">
+      <nav class="navbar" aria-label="Primary">
+        <a class="brand" href="./index.html" aria-label="Pinpoint home">
+          <div class="brand-logo" aria-hidden="true">
+            <img src="./assets/pinpoint-extension-icon.png" alt="" />
+          </div>
+          <span>Pinpoint</span>
+        </a>
+        <div class="nav-links">
+          <a href="./index.html#top">Home</a>
+          <a href="./index.html#why-pinpoint">Why Pinpoint</a>
+          <a href="./index.html#how-it-works">How it works</a>
+          <a href="./privacy.html" style="color: var(--text-primary); font-weight: 600;">Privacy</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="section" style="padding-top: 160px; min-height: 100vh;">
+      <div class="container">
+        <article class="glass-panel prose" style="padding: 64px 48px;">
+          
+          <span class="meta-text">Legal Update &mdash; 2026-04-01</span>
+          
+          <h1>Privacy Policy</h1>
+
+          <p>
+            Pinpoint is a Chrome extension that lets users annotate webpage UI elements and organize feedback for implementation work. Our priority is a lightweight execution with minimal data footprints.
+          </p>
+
+          <h2>What data Pinpoint stores</h2>
+          <ul>
+            <li>
+              User-created annotation content, including note text and UI metadata required to correctly re-anchor that note on the same live page.
+            </li>
+            <li>User preferences (e.g., toolbar theme and size).</li>
+            <li>
+              User-approved site allowlist entries utilized to auto-activate the extension specifically on selected operational domains.
+            </li>
+          </ul>
+
+          <h2>Where that data is stored</h2>
+          <ul>
+            <li>
+              Raw annotation content and local UI configuration preferences are stored natively within Chrome's extension storage partition on your physical device.
+            </li>
+            <li>
+              URL string patterns intended for auto-activation are securely stored in <code>chrome.storage.sync</code>, which implies your Chrome Browser may synchronize those specific settings across your signed-in browser profiles via Google.
+            </li>
+          </ul>
+
+          <h2>What Pinpoint does not do</h2>
+          <ul>
+            <li>Pinpoint does not sell, bundle, or distribute any personal information.</li>
+            <li>Pinpoint does not transmit annotation content to any centralized Pinpoint backend services or external databases.</li>
+            <li>Pinpoint does not retrieve or execute remotely hosted telemetry code.</li>
+            <li>Pinpoint does not observe or utilize generic browsing activity for advertising.</li>
+          </ul>
+
+          <h2>How site access permissions are utilized</h2>
+          <p>
+            Pinpoint leverages temporary access protocols on the active tab only when you intentionally initialize the extension interface. Should you explicitly approve persistent functional access for a selected site, Pinpoint persists that domain in an allowlist. We use this granted origin permission boundary solely to re-enable annotation UI layers on that exact approved site.
+          </p>
+
+          <h2>Data Sharing</h2>
+          <p>
+            Pinpoint strictly does not share, transmit, or leak securely stored localized annotation data to third parties as part of the extension's functional architecture.
+          </p>
+
+          <h2>Data retention strategy and user controls</h2>
+          <p>
+            Users are fully empowered to eliminate saved notes sequentially via the Pinpoint UI or structurally via removing the extension, which strictly purges all extension-managed localized storage according to Chrome's native extension lifecycle termination rules.
+          </p>
+
+          <h2>Need assistance?</h2>
+          <p>
+            For granular privacy queries or direct support regarding Pinpoint, please contact:<br/>
+            <a href="mailto:ztnbqfspcs@privaterelay.appleid.com" style="color: var(--accent-hover); font-weight: 500;">ztnbqfspcs@privaterelay.appleid.com</a>.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-logo" style="width: 24px; height: 24px;">
+              <img src="./assets/pinpoint-extension-icon.png" alt="" />
+            </div>
+            Pinpoint
+          </div>
+          <p>Pinpoint keeps webpage feedback specific, localized, and instantly actionable. A lightweight extension with a massive impact.</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="./privacy.html" style="color: var(--text-primary);">Privacy Policy</a>
+          <a href="mailto:ztnbqfspcs@privaterelay.appleid.com">Support Request</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
