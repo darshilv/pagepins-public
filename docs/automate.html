@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/png" href="./assets/pagepins-extension-icon.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="automate-page">
     <div class="nav-wrapper">
       <nav class="navbar" aria-label="Primary">
         <a class="brand" href="./index.html" aria-label="PagePins home">
@@ -50,120 +50,153 @@
       </nav>
     </div>
 
-    <main class="section" style="padding-top: 160px; min-height: 100vh;">
-      <div class="container" style="display: flex; flex-direction: column; gap: 28px;">
-        <section class="glass-panel" style="padding: 56px 44px;">
-          <span class="meta-text" style="margin-bottom: 18px;">Automation Edition - 2026-04-16</span>
-          <h1 style="margin-bottom: 14px;">Automate with PagePins Companion Bridge</h1>
-          <p style="font-size: 1.15rem; max-width: 920px; margin-bottom: 24px;">
-            Keep the Chrome extension flow exactly as-is, then optionally add a local automation layer that routes annotations into Codex/Cursor/Claude workflows.
+    <main class="section automate-main">
+      <div class="container automate-layout">
+        <section class="automate-hero glass-panel">
+          <div class="automate-hero-copy">
+            <span class="meta-text automate-meta">Automation Edition - 2026-04-16</span>
+            <h1>Automate with PagePins Companion Bridge</h1>
+            <p>
+              Keep the Chrome extension flow exactly as-is, then optionally add a local automation layer that routes annotations into Codex, Cursor, and Claude workflows.
+            </p>
+            <div class="automate-actions">
+              <a
+                class="btn btn-primary"
+                href="https://github.com/darshilv/pagepins-companion-bridge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Companion Bridge on GitHub
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="https://github.com/darshilv/pagepins-companion-bridge.git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Clone URL
+              </a>
+            </div>
+            <ul class="automate-signal-list" aria-label="Highlights">
+              <li>Local-first runtime</li>
+              <li>MCP tools included</li>
+              <li>Skill-assisted triage</li>
+            </ul>
+          </div>
+          <div class="automate-rail" aria-hidden="true">
+            <div class="automate-rail-line"></div>
+            <div class="automate-rail-node" data-step="1">Capture annotations on live UI</div>
+            <div class="automate-rail-node" data-step="2">Sync through local Companion Bridge</div>
+            <div class="automate-rail-node" data-step="3">Run agentic handoff actions</div>
+          </div>
+        </section>
+
+        <section class="automate-privacy-highlight">
+          <p class="automate-privacy-kicker">Privacy By Default</p>
+          <h3>Your annotation data stays local to your environment.</h3>
+          <p>
+            PagePins annotation data remains in browser storage and Companion Bridge records stay in your local runtime. No public dashboard is required for this workflow, and you control which assistants can access bridge actions.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-            <a
-              class="btn btn-primary"
-              href="https://github.com/darshilv/pagepins-companion-bridge"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Companion Bridge on GitHub
-            </a>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/darshilv/pagepins-companion-bridge.git"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Clone URL
-            </a>
+        </section>
+
+        <section class="automate-capabilities">
+          <header class="automate-section-head">
+            <h2>What You Get In The Package</h2>
+            <p>A complete bridge layer from extension snapshots to assistant-ready actions.</p>
+          </header>
+          <div class="automate-cap-grid">
+            <article class="automate-cap">
+              <p class="automate-cap-kicker">Runtime</p>
+              <h3>HTTP Bridge Service</h3>
+              <p>Receives extension snapshots at <code>POST /pinpoint</code>, stores item-level records, and tracks lifecycle state changes.</p>
+              <p class="automate-cap-meta">Entry: <code>src/server.js</code></p>
+            </article>
+            <article class="automate-cap">
+              <p class="automate-cap-kicker">Protocol</p>
+              <h3>MCP Server</h3>
+              <p>Runs local MCP stdio tools for assistants while reading from the same SQLite annotation store.</p>
+              <p class="automate-cap-meta">Entry: <code>src/mcp-server.js</code></p>
+            </article>
+            <article class="automate-cap">
+              <p class="automate-cap-kicker">Workflow</p>
+              <h3>Prompt-Ready Assistant Lane</h3>
+              <p>Use simple prompt starters in your assistant and let MCP bridge actions happen in the background.</p>
+              <p class="automate-cap-meta">Focus: less setup, faster handoff</p>
+            </article>
           </div>
         </section>
 
-        <section class="grid-3">
-          <article class="card">
-            <h3>HTTP Bridge Service</h3>
-            <p>The bridge receives extension snapshots at <code>POST /pinpoint</code>, stores item-level records, and tracks lifecycle changes.</p>
-            <p style="margin-top: auto; color: var(--text-secondary);">Runtime: <code>src/server.js</code></p>
-          </article>
-          <article class="card">
-            <h3>MCP Server</h3>
-            <p>A local MCP stdio server exposes annotation tools for assistants while reading from the same SQLite store.</p>
-            <p style="margin-top: auto; color: var(--text-secondary);">Runtime: <code>src/mcp-server.js</code></p>
-          </article>
-          <article class="card">
-            <h3>Skills + Client Rules</h3>
-            <p>Includes Codex skill packs and setup scripts so teams can quickly route requests through <code>pagepins_assist</code>.</p>
-            <p style="margin-top: auto; color: var(--text-secondary);">Install: <code>npm run setup:mcp</code></p>
-          </article>
+        <section class="automate-flow">
+          <header class="automate-section-head">
+            <h2>Automation Flow</h2>
+            <p>The same product feedback loop, now with an optional automation lane.</p>
+          </header>
+          <ol class="automate-timeline">
+            <li>
+              <span class="automate-step-marker">1</span>
+              <div class="automate-step-body">
+                <h3>Capture</h3>
+                <p>Create, edit, resolve, and delete notes directly in PagePins on the live page where work is needed.</p>
+              </div>
+            </li>
+            <li>
+              <span class="automate-step-marker">2</span>
+              <div class="automate-step-body">
+                <h3>Sync</h3>
+                <p>Companion Bridge ingests snapshots and tracks workflow states: <code>pending</code>, <code>reviewed</code>, and <code>sent</code>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="automate-step-marker">3</span>
+              <div class="automate-step-body">
+                <h3>Execute</h3>
+                <p>Assistants pull pending items, generate implementation-ready drafts, and keep status in sync as work progresses.</p>
+              </div>
+            </li>
+          </ol>
         </section>
 
-        <section class="glass-panel" style="padding: 34px;">
-          <h2 style="margin-bottom: 14px;">Automation Flow</h2>
-          <div class="grid-3" style="align-items: stretch;">
-            <div style="padding: 18px; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-secondary);">
-              <strong>1. Capture</strong>
-              <p style="margin: 8px 0 0 0;">Create, edit, resolve, and delete notes directly in PagePins on live UI.</p>
-            </div>
-            <div style="padding: 18px; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-secondary);">
-              <strong>2. Sync</strong>
-              <p style="margin: 8px 0 0 0;">Companion Bridge ingests snapshots and manages workflow states: <code>pending</code>, <code>reviewed</code>, <code>sent</code>.</p>
-            </div>
-            <div style="padding: 18px; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-secondary);">
-              <strong>3. Execute</strong>
-              <p style="margin: 8px 0 0 0;">Assistants pull pending items, draft implementation prompts, and update status as work progresses.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="grid-2" style="align-items: stretch;">
-          <article class="glass-panel" style="padding: 32px;">
-            <h3 style="margin-bottom: 12px;">Quick Start (from README)</h3>
-            <pre style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; overflow-x: auto;"><code>git clone https://github.com/darshilv/pagepins-companion-bridge.git
+        <section class="automate-setup-grid">
+          <article class="automate-terminal">
+            <h3>Quick Start</h3>
+            <p>Clone the repo, install dependencies, and start the bridge runtime.</p>
+            <pre><code>git clone https://github.com/darshilv/pagepins-companion-bridge.git
 cd pagepins-companion-bridge
 cp .env.example .env
 npm install
 npm run dev</code></pre>
-            <p style="margin-top: 12px;">Bridge URL: <code>http://127.0.0.1:3456</code></p>
+            <p class="automate-terminal-note">Bridge URL: <code>http://127.0.0.1:3456</code></p>
           </article>
 
-          <article class="glass-panel" style="padding: 32px;">
-            <h3 style="margin-bottom: 12px;">Second Terminal + Setup</h3>
-            <pre style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; overflow-x: auto;"><code>npm run mcp
-npm run setup:mcp</code></pre>
-            <p style="margin-top: 12px;">In extension settings, enable Companion Bridge and set endpoint:</p>
-            <pre style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px; overflow-x: auto;"><code>http://127.0.0.1:3456/pinpoint</code></pre>
-          </article>
-        </section>
-
-        <section class="grid-2" style="align-items: stretch;">
-          <article class="glass-panel" style="padding: 32px;">
-            <h3 style="margin-bottom: 10px;">Verify Ingestion</h3>
-            <pre style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; overflow-x: auto;"><code>curl http://127.0.0.1:3456/health
-curl "http://127.0.0.1:3456/annotations?limit=20"
-curl "http://127.0.0.1:3456/annotations/current"</code></pre>
-          </article>
-          <article class="glass-panel" style="padding: 32px;">
-            <h3 style="margin-bottom: 10px;">Assistant Actions Included</h3>
-            <ul style="margin: 0; padding-left: 20px;">
-              <li><code>inbox</code> for pending annotation triage</li>
-              <li><code>open</code> and <code>focus</code> for item context</li>
-              <li><code>draft</code> for implementation-ready chat output</li>
-              <li><code>set_status</code> for workflow transitions</li>
-            </ul>
+          <article class="automate-terminal automate-terminal-light">
+            <h3>Use It In Your Assistant</h3>
+            <p>Once bridge runtime is active, start with one of these copy-ready prompts.</p>
+            <div class="automate-prompt-list">
+              <div class="automate-prompt-item">
+                <button type="button" class="copy-prompt-btn">Copy</button>
+                <pre><code>Show my pending PagePins annotations and choose the best next one to focus.</code></pre>
+              </div>
+              <div class="automate-prompt-item">
+                <button type="button" class="copy-prompt-btn">Copy</button>
+                <pre><code>Open my current PagePins annotation, summarize the issue, and draft an implementation-ready prompt.</code></pre>
+              </div>
+              <div class="automate-prompt-item">
+                <button type="button" class="copy-prompt-btn">Copy</button>
+                <pre><code>Review my pending PagePins inbox and write concise handoff drafts for the top 3 items.</code></pre>
+              </div>
+              <div class="automate-prompt-item">
+                <button type="button" class="copy-prompt-btn">Copy</button>
+                <pre><code>Mark the current PagePins annotation as reviewed and provide a short implementation checklist.</code></pre>
+              </div>
+            </div>
           </article>
         </section>
 
-        <section class="glass-panel" style="padding: 32px;">
-          <h3 style="margin-bottom: 10px;">Privacy and Control</h3>
-          <p style="margin-bottom: 0;">
-            This automation layer is local-first. Extension note data stays in browser storage, and bridge records live in your local runtime. You choose when the bridge runs and which assistants can access tools.
-          </p>
-        </section>
-
-        <section class="glass-panel" style="padding: 28px;">
-          <h3 style="margin-bottom: 8px;">Need Assistance?</h3>
-          <p style="margin-bottom: 0;">
+        <section class="automate-support-strip">
+          <h3>Need Assistance?</h3>
+          <p>
             For setup support, contact
-            <a href="mailto:ztnbqfspcs@privaterelay.appleid.com" style="color: var(--accent-hover); font-weight: 500;">ztnbqfspcs@privaterelay.appleid.com</a>.
+            <a href="mailto:ztnbqfspcs@privaterelay.appleid.com">ztnbqfspcs@privaterelay.appleid.com</a>.
           </p>
         </section>
       </div>
@@ -188,5 +221,52 @@ curl "http://127.0.0.1:3456/annotations/current"</code></pre>
         </div>
       </div>
     </footer>
+    <script>
+      (() => {
+        async function copyToClipboard(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            return true;
+          }
+
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.setAttribute('readonly', '');
+          textArea.style.position = 'fixed';
+          textArea.style.top = '-9999px';
+          document.body.appendChild(textArea);
+          textArea.select();
+
+          let copied = false;
+          try {
+            copied = document.execCommand('copy');
+          } catch {
+            copied = false;
+          }
+
+          document.body.removeChild(textArea);
+          return copied;
+        }
+
+        document.querySelectorAll('.copy-prompt-btn').forEach((button) => {
+          button.addEventListener('click', async () => {
+            const promptItem = button.closest('.automate-prompt-item');
+            const codeEl = promptItem ? promptItem.querySelector('code') : null;
+            if (!codeEl) return;
+
+            const originalLabel = button.textContent;
+            button.disabled = true;
+
+            const ok = await copyToClipboard(codeEl.textContent.trim());
+            button.textContent = ok ? 'Copied' : 'Copy failed';
+
+            setTimeout(() => {
+              button.textContent = originalLabel;
+              button.disabled = false;
+            }, 1300);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

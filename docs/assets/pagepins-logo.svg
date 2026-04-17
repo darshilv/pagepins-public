@@ -1,0 +1,20 @@
+<svg width="320" height="64" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pagepinsLogoTitle pagepinsLogoDesc">
+  <title id="pagepinsLogoTitle">PagePins Logo</title>
+  <desc id="pagepinsLogoDesc">PagePins icon with PagePins wordmark</desc>
+
+  <!-- Icon -->
+  <image href="./pagepins-extension-icon.png" x="0" y="8" width="48" height="48" />
+
+  <!-- Wordmark -->
+  <text
+    x="60"
+    y="41"
+    fill="#111827"
+    font-family="Avenir Next, Avenir, Montserrat, Segoe UI, Helvetica, Arial, sans-serif"
+    font-size="38"
+    font-weight="700"
+    letter-spacing="0.15"
+  >
+    PagePins
+  </text>
+</svg>
